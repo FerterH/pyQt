@@ -1,6 +1,6 @@
 git init
-git add .
+
 git commit -m "-"
 #git branch -M main
-#git remote add originpyqt https://github.com/FerterH/pyQt.git
-git push -u origin main
+#git remote add originpyqt1 https://github.com/FerterH/pyQt.git
+git push -u originpyqt1 main

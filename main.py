@@ -4,6 +4,10 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import QBasicTimer
 import sys
 #https://build-system.fman.io/qt-designer-download
+numClick = 0
+def butClick():
+    print('lol lol lol looooooooooooool')
+
 
 def mainApp():
     app = QApplication(sys.argv)    #берем настройки компа
@@ -20,9 +24,9 @@ def mainApp():
     button.move(150,200)
     button.setText('Кнопка №1')
     button.setFixedWidth(300)
-
-    progress = QtWidgets.QProgressBar(window)
-    timer = QtCore.QBasicTimer()
+    button.clicked.connect(butClick)
+    # progress = QtWidgets.QProgressBar(window)
+    # timer = QtCore.QBasicTimer()
 
     window.show()
     sys.exit(app.exec_())
