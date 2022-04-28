@@ -1,11 +1,15 @@
-
+import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 # str(a = '0')
 # str(b = '0')
 
 class Ui_Dialog(object):
 
+
+
     def setupUi(self, Dialog):
+        self.percent = 0
+        self.flag = 0
         self.a = ''
         self.b = ''
         Dialog.setObjectName("Dialog")
@@ -76,72 +80,163 @@ class Ui_Dialog(object):
 
         self.progressBar = QtWidgets.QProgressBar(Dialog)
         self.progressBar.setGeometry(QtCore.QRect(10, 170, 411, 71))
-        self.progressBar.setProperty("value", 0)
+        self.progressBar.setProperty("value", self.percent)
         self.progressBar.setObjectName("progressBar")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
-        self.pl = False
-        self.mi = False
     def plus(self):
-        print(self.a + self.b)
-        self.pl = True
+        self.flag = 1
+        # print(int(self.a) + int(self.b))
     def minus(self):
-        print(self.a-self.b)
-        self.mi = True
+        self.flag = 2
+        # print(self.a-self.b)
     def umn(self):
-        print(self.a*self.b)
+        self.flag = 3
+        # print(self.a*self.b)
     def delit(self):
-        print(self.a/self.b)
+        self.flag = 4
+        # print(self.a/self.b)
+    def ch1(self):
+        if self.flag == 0:
+            self.a = str(self.a) + '1'
+        else:
+            self.b = str(self.b) + '1'
+    def ch2(self):
+        if self.flag == 0:
+            self.a = str(self.a) + '2'
+        else:
+            self.b = str(self.b) + '2'
+    def ch3(self):
+        if self.flag == 0:
+            self.a = str(self.a) + '3'
+        else:
+            self.b = str(self.b) + '3'
+    def ch4(self):
+        if self.flag == 0:
+            self.a = str(self.a) + '4'
+        else:
+            self.b = str(self.b) + '4'
+    def ch5(self):
+        if self.flag == 0:
+            self.a = str(self.a) + '5'
+        else:
+            self.b = str(self.b) + '5'
+    def ch6(self):
+        if self.flag == 0:
+            self.a = str(self.a) + '6'
+        else:
+            self.b = str(self.b) + '6'
+    def ch7(self):
+        if self.flag == 0:
+            self.a = str(self.a) + '7'
+        else:
+            self.b = str(self.b) + '7'
+    def ch8(self):
+        if self.flag == 0:
+            self.a = str(self.a) + '8'
+        else:
+            self.b = str(self.b) + '8'
+    def ch9(self):
+        if self.flag == 0:
+            self.a = str(self.a) + '9'
+        else:
+            self.b = str(self.b) + '9'
 
-    def a1(self):
-        self.a = str(self.a) + '1'
-        print(self.a)
-    def b1(self):
-        self.b = str(self.b) + '1'
+
+    def prnt(self):
+        print('a',self.a)
         print('b',self.b)
+        print('flag', self.flag)
+        for i in range(0, 51):
+            self.progressBar.setProperty("value", self.percent)
+            self.percent = self.percent +2
+            time.sleep(0.01)
+        if self.flag == 1:
+             self.res = int(self.a) + int(self.b)
+             print('Ответ:', int(self.a) + int(self.b))
+             self.lcdNumber.setProperty("intValue", self.res)
+
+        elif self.flag == 2:
+             self.res = int(self.a) - int(self.b)
+             print('Ответ:', int(self.a) - int(self.b))
+             self.lcdNumber.setProperty("intValue", self.res)
+
+        elif self.flag == 3:
+             self.res = int(self.a) * int(self.b)
+             print('Ответ:', int(self.a) * int(self.b))
+             self.lcdNumber.setProperty("intValue", self.res)
+
+        elif self.flag == 4:
+             self.res = int(self.a) / int(self.b)
+             print('Ответ:', int(self.a) / int(self.b))
+             self.lcdNumber.setProperty("intValue", self.res)
+
     def a2(self):
         self.a = str(self.a) + '2'
     def b2(self):
         self.b = str(self.b) + '2'
     def retranslateUi(self, Dialog):
-        self.pl = False
-        self.mi = False
+
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.pushButton.setText(_translate("Dialog", "1"))
-        if self.pl or self.mi:
-            self.pushButton.clicked.connect(self.b1)
-        else:
-            self.pushButton.clicked.connect(self.a1)
+        self.pushButton.clicked.connect(self.ch1)
+
         self.pushButton_2.setText(_translate("Dialog", "2"))
-        self.pushButton_2.clicked.connect
+        self.pushButton_2.clicked.connect(self.ch2)
+
         self.pushButton_3.setText(_translate("Dialog", "="))
-        self.pushButton_3.clicked.connect
+        self.pushButton_3.clicked.connect(self.prnt)
         self.pushButton_4.setText(_translate("Dialog", "+"))
         self.pushButton_4.clicked.connect(self.plus)
         self.pushButton_5.setText(_translate("Dialog", "3"))
-        self.pushButton_5.clicked.connect
+        self.pushButton_5.clicked.connect(self.ch3)
+
         self.pushButton_6.setText(_translate("Dialog", "4"))
-        self.pushButton_6.clicked.connect
+        self.pushButton_6.clicked.connect(self.ch4)
+
         self.pushButton_7.setText(_translate("Dialog", "5"))
-        self.pushButton_7.clicked.connect
+        self.pushButton_7.clicked.connect(self.ch5)
+
         self.pushButton_8.setText(_translate("Dialog", "6"))
-        self.pushButton_8.clicked.connect
+        self.pushButton_8.clicked.connect(self.ch6)
+
         self.pushButton_9.setText(_translate("Dialog", "7"))
-        self.pushButton_9.clicked.connect
+        self.pushButton_9.clicked.connect(self.ch7)
+
         self.pushButton_10.setText(_translate("Dialog", "8"))
-        self.pushButton_10.clicked.connect
+        self.pushButton_10.clicked.connect(self.ch8)
+
         self.pushButton_11.setText(_translate("Dialog", "9"))
-        self.pushButton_11.clicked.connect
+        self.pushButton_11.clicked.connect(self.ch9)
+
         self.pushButton_12.setText(_translate("Dialog", "0"))
-        self.pushButton_12.clicked.connect
+        self.pushButton_12.clicked.connect(self.ch2)
+
         self.pushButton_13.setText(_translate("Dialog", "-"))
-        self.pushButton_13.clicked.connect
+        self.pushButton_13.clicked.connect(self.minus)
         self.pushButton_14.setText(_translate("Dialog", "*"))
-        self.pushButton_14.clicked.connect
+        self.pushButton_14.clicked.connect(self.umn)
         self.pushButton_15.setText(_translate("Dialog", "/"))
-        self.pushButton_15.clicked.connect
+        self.pushButton_15.clicked.connect(self.delit)
+
+
+        # if self.flag == 0:
+        #     self.pushButton.clicked.connect(self.a1)
+        #     self.pushButton_2.clicked.connect(self.a2)
+        #
+        #     # self.pushButton_5.clicked.connect(self.b3)
+        #     # self.pushButton_6.clicked.connect(self.b4)
+        #     # self.pushButton_7.clicked.connect(self.b5)
+        #     # self.pushButton_8.clicked.connect(self.b6)
+        #     # self.pushButton_9.clicked.connect(self.b7)
+        #     # self.pushButton_10.clicked.connect(self.b8)
+        #     # self.pushButton_11.clicked.connect(self.b9)
+        # else:
+        #     self.pushButton.clicked.connect(self.b1)
+        #     self.pushButton_2.clicked.connect(self.b2)
+
 
 if __name__ == "__main__":
     import sys
