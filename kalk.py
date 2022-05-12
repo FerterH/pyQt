@@ -171,7 +171,13 @@ class Ui_Dialog(object):
              self.res = int(self.a) / int(self.b)
              print('Ответ:', int(self.a) / int(self.b))
              self.lcdNumber.setProperty("intValue", self.res)
-
+        elif self.flag == 0:
+            self.lcdNumber.setProperty('intValue', 0)
+        self.b = 0
+        self.a = 0
+        self.flag = 0
+        self.res = 0
+        self.percent = 0
     def a2(self):
         self.a = str(self.a) + '2'
     def b2(self):
