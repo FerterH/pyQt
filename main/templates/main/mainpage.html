@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+{% block body %}
+<style>
+.example-1 {
+
+    height: 830px;
+    background-image: url(https://asiamountains.net/upload/slide/slide-1960x857-07.jpg);
+}
+
+</style>
+<style>
+.example-2 {
+
+    height: 7000px;
+    background-image: url(data:image/jpeg;base64,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);
+}
+</style>
+<div class="center">Копайте глубже!</div>
+<div class="example-1"></div>
+<style>
+    .center{
+    margin-left: 750px;
+    font-size: 40px;
+    }
+</style>
+>
+<h1></h1>
+
+<img id="g110" src="/media/textures/11.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/11.jpg">
+<img id="g111" src="/media/textures/12.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/12.jpg">
+<img id="g112" src="/media/textures/13.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/13.jpg">
+<img id="g113" src="/media/textures/13.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/13.jpg">
+<img id="g115" src="/media/textures/14.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/14.jpg">
+<img id="g116" src="/media/textures/14.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/14.jpg">
+<img id="g117" src="/media/textures/14.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/14.jpg">
+<img id="g118" src="/media/textures/14.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/14.jpg">
+<img id="g119" src="/media/textures/14.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/14.jpg">
+<img id="g120" src="/media/textures/14.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/14.jpg">
+<img id="g121" src="/media/textures/14.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/14.jpg">
+<img id="g122" src="/media/textures/14.jpg" style="left: 0px; top: 1000px; width: 1920px; height: 1500px; z-index: 0; background: url(https://thedeepestsite.com/media/textures/14.jpg">
+<ul class="center">
+
+      </ul>
+<div class="center">Добро пожаловать!</div>
+<div class="center">Выберите направление</div>
+<ul class="center">
+        <li class="nav-item"><a href="europe" class="nav-link active" aria-current="page">Европа</a></li>
+        <li class="nav-item"><a href="asia" class="nav-link">Азия</a></li>
+        <li class="nav-item"><a href="russia" class="nav-link">Россия</a></li>
+        <li class="nav-item"><a href="america" class="nav-link">Америка</a></li>
+
+      </ul>
+
+
+
+
+{%endblock%}
