@@ -1,1 +1,1 @@
-python smile.py
+python cv.py

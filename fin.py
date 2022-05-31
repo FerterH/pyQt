@@ -1,6 +1,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import time
 import os
+import webbrowser
+
 class Ui_Dialog(object):
     def pyGame(self):
         os.system('pygame.bat')
@@ -9,27 +11,34 @@ class Ui_Dialog(object):
     def kalk(self):
         os.system('kalk.bat')
     def djando(self):
+        webbrowser.open_new('http://127.0.0.1:8000/')
         os.system('Django.bat')
     def runBarPQ(self):
         for i in range(0,98):
             self.percent += 2
             time.sleep(0.015)
             self.progressBar_2.setProperty("value", self.percent)
+        self.progressBar_2.setProperty("value", 0)
+
     def runBarCV(self):
         for i in range(0,98):
             self.percent += 2
             time.sleep(0.015)
             self.progressBar_4.setProperty("value", self.percent)
+        self.progressBar_2.setProperty("value", 0)
+
     def runBarDJ(self):
         for i in range(0,98):
             self.percent += 2
             time.sleep(0.015)
             self.progressBar_3.setProperty("value", self.percent)
+        self.progressBar_2.setProperty("value", 0)
     def runBarPG(self):
         for i in range(0,98):
             self.percent += 2
             time.sleep(0.015)
             self.progressBar.setProperty("value", self.percent)
+        self.progressBar_2.setProperty("value", 0)
     def setupUi(self, Dialog):
         self.percent = 0
         Dialog.setObjectName("Dialog")
